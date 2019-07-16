@@ -73,7 +73,7 @@ func (l *logrusImpl) WithFile(appsName, filename string, maxAge int) {
 
 		path := filename + ".log"
 		writer, _ := rotatelogs.New(
-			"./"+appsName+"/"+path+".%Y%m%d",
+			"./logs/"+path+".%Y%m%d",
 			rotatelogs.WithLinkName(path),
 			rotatelogs.WithMaxAge(time.Duration(maxAge*24)*time.Hour),
 			rotatelogs.WithRotationTime(time.Duration(1*24)*time.Hour),
